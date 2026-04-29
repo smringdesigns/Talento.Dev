@@ -1,0 +1,613 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ESTILOS */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter:vf@latest/latin-wght-normal.woff2)
+       format('woff2-variations');
+}
+
+/* VARIABLES */
+:root {
+  --primary: #1173d4;
+  --primary-dark: #0a3d66;
+  --primary-hover: #0d5ba8;
+  --primary-light: #09f;
+  --background: #06182a;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.1);
+  --card-bg: #1e293b;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --input-bg: #1e293b;
+  --hsla-example: hsla(210, 100%, 56%, 1);
+}
+
+/* Configuración del cuerpo del documento */
+body {
+  font-family: "Inter Variable", system-ui;
+  background-color: var(--background);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Permite que el footer baje al final */
+  line-height: 1.6;
+}
+
+/* TIPOGRAFÍA */
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  text-wrap: balance; /* Equilibra el texto en varias líneas */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+h1 svg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--primary);
+}
+
+h1 + p {
+  text-wrap: balance;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* HEADER - NAVEGACIÓN */
+
+header {
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+  padding: .5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Navegación principal */
+nav {
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus {
+  color: var(--primary);
+  outline: none;
+}
+
+/* Botones dentro del Header (ej. Login/Signup) */
+header div a {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #334155;
+  color: var(--text-primary);
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* SECCIONES HOME - HERO */
+
+/* Sección Hero: Imagen de fondo y título principal */
+main > section:nth-child(1) {
+  position: relative;
+  height: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagen con máscara de degradado para desvanecerse hacia abajo */
+main > section:nth-child(1) > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  mask-image: linear-gradient(to bottom, rgba(16, 25, 34, 1) 5%, rgba(16, 25, 34, 0) 80%);
+}
+
+/* COMPONENTE: FORMULARIO DE BÚSQUEDA GENÉRICO */
+
+form {
+  max-width: 42rem;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 1rem;
+}
+
+/* Contenedor del input y el icono */
+form > div {
+  display: flex;
+  align-items: center;
+  background-color: var(--input-bg);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px var(--shadow);
+  padding: 0.5rem;
+  gap: 0.5rem;
+
+  svg {
+    padding-left: 0.75rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+}
+
+form input[type="text"] {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+form input[type="text"]::placeholder {
+  color: #64748b;
+}
+
+/* Botones genéricos */
+button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--text-muted);
+  color: white;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* 👇 hover y focus separados */
+button:hover,
+button:focus {
+  background-color: var(--primary-hover);
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* 👇 active separado */
+button:active {
+  transform: scale(0.90);
+}
+
+/* SECCIÓN DE CARACTERÍSTICAS */
+
+main > section:nth-child(2) {
+  padding-inline: 1rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+main > section:nth-child(2) > header {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+main > section:nth-child(2) h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+main > section:nth-child(2) header p {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 42rem;
+  margin: 0 auto 2rem auto;
+}
+
+/* Grid layout para las tarjetas de features */
+main > section:nth-child(2) footer {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* COMPONENTE: PÁGINA EMPLEO */
+
+/* =========================================
+   6. PÁGINA DE EMPLEOS (Jobs Search)
+   ========================================= */
+
+/* Sección Principal de Búsqueda */
+.jobs-search {
+  margin-top: 1rem;
+  padding: 0;
+  text-align: center;
+}
+
+.jobs-search h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+}
+
+.jobs-search p {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Contenedor del Formulario */
+.jobs-search form {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-inline: 1rem;
+}
+
+/* Barra de Búsqueda (Input + Icono) */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 6px -1px var(--shadow);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 0 0 2px rgba(17, 115, 212, 0.2);
+  border-color: var(--primary);
+}
+
+.search-bar svg {
+  color: var(--text-muted);
+  width: 20px;
+  height: 20px;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.search-bar input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* Filtros (Selects) - Estilo Dark Mode */
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.search-filters select {
+  appearance: none; /* Elimina estilo default del navegador */
+  background-color: var(--card-bg);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 0.6rem 1rem;
+  padding-right: 2.5rem; /* Espacio para la flecha */
+  border-radius: 0.375rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+  
+  /* Flecha personalizada SVG encoded */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+}
+
+.search-filters select:hover {
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+.search-filters select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+/* --- Botón Aplicar Filtros --- */
+.apply-filters {
+  align-self: center;
+  background-color: var(--text-muted);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transition: all 0.2s;
+}
+
+.apply-filters.active {
+  background-color: var(--primary);
+  cursor: pointer;
+  opacity: 1;
+}
+
+.apply-filters.active:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* LISTADO DE EMPLEOS */
+.jobs-listings {
+  max-width: 860px;
+  margin: 2rem auto;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.jobs-listings-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.75rem;
+  gap: 1.5rem;
+  border-bottom: 0.5px solid var(--border);
+  transition: background-color 0.2s ease;
+}
+
+/* Ocultar las card por filtro */
+.jobs-listings-card.is-hidden {
+  display: none;
+}
+
+.jobs-listings-card:last-child {
+  border-bottom: none;
+}
+
+.jobs-listings-card:hover {
+  background-color: var(--background-hover);
+}
+
+/* Info del puesto */
+.jobs-listings-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  margin-bottom: 0.2rem;
+}
+
+.jobs-listings-card small {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.jobs-listings-card p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  /* Recorta a 2 líneas */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Badges de modalidad */
+.badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-remoto    { background: #E1F5EE; color: #0F6E56; }
+.badge-presencial{ background: #E6F1FB; color: #185FA5; }
+.badge-hibrido   { background: #FAEEDA; color: #854F0B; }
+
+/* BOTÓN "APLICAR" */
+.button-apply-job {
+  background-color: var(--primary-dark);
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+/* esto sale del bloque */
+.button-apply-job.is-applied {
+  background: #28a745;
+  pointer-events: none;
+}
+
+/* esto también */
+.button-apply-job:disabled {
+  background: #28a745;
+  color: white;
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.85;
+  transform: none;
+  box-shadow: none;
+}
+/* TARJETAS Y LISTADOS */
+
+/* Estilos para las tarjetas de Features */
+article {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  margin-bottom: 16px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 3px 0 var(--shadow);
+}
+
+article svg {
+  color: var(--primary-light);
+  background: rgba(0, 153, 255, 0.3);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  padding: 16px;
+  margin-bottom: 1rem;
+}
+
+article h3 {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+} 
+
+article p {
+  color: var(--text-muted);
+}
+
+/* Estilos específicos para el listado de empleos */
+.jobs-listings article {
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 0;
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
+.jobs-listings article small {
+  font-size: 0.875rem;
+  opacity: 0.75;
+}
+
+.jobs-listings article p {
+  margin-top: 0.5rem;
+}
+
+.jobs-listings article:last-child {
+  border-bottom: none;
+}
+
+/* FOOTER Y PAGINACIÓN */
+
+/* Footer principal de la página */
+footer {
+  margin-top: auto; /* Empuja el footer hacia abajo si hay poco contenido */
+  background-color: var(--background);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 16px;
+}
+
+footer small {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Estilos de paginación numéricos */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-block: 2rem;
+
+  a {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    border-radius: 0.375rem;
+    transition: all .3s;
+
+    &:hover, &:focus {
+      background-color: #fff;
+    }
+
+    &.is-active {
+      background-color: var(--primary);
+      color: #fff;
+      pointer-events: none;
+    }
+  }
+}
+
+/* MEDIA QUERIES (Responsive)*/
+@media (max-width: 768px) {
+  .jobs-listings-card {
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .button-apply-job {
+    width: 100%; /* Botón full width en móvil */
+  }
+  
+  .search-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "titulo": "Ingeniero de Software",
+    "empresa": "Tech Solutions Inc.",
+    "ubicacion": "Remoto",
+    "descripcion": "Buscamos un ingeniero de software con experiencia en desarrollo web y conocimientos en JavaScript, React y Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de comunicación.",
+    "data": {
+      "technology": "react",
+      "modalidad": "remoto",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "2",
+    "titulo": "Analista de Datos",
+    "empresa": "Data Driven Co.",
+    "ubicacion": "Presencial",
+    "descripcion": "Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y herramientas de visualización. Se requiere conocimiento en SQL, Python y R.",
+    "data": {
+      "technology": "python",
+      "modalidad": "presencial",
+      "nivel": "junior"
+    }
+  },
+  {
+    "id": "3",
+    "titulo": "Desarrollador de Aplicaciones Móviles",
+    "empresa": "Mobile Apps Ltd.",
+    "ubicacion": "Híbrido",
+    "descripcion": "Buscamos un desarrollador de aplicaciones móviles con experiencia en iOS y Android. Se requiere conocimiento en Swift, Kotlin y diseño de interfaces.",
+    "data": {
+      "technology": "mobile",
+      "modalidad": "hibrido",
+      "nivel": "semi-senior"
+    }
+  },
+  {
+    "id": "4",
+    "titulo": "Ingeniero de DevOps",
+    "empresa": "Cloud Services SA",
+    "ubicacion": "Remoto",
+    "descripcion": "Se busca ingeniero DevOps con experiencia en AWS, Docker, Kubernetes y CI/CD. Capacidad para automatizar procesos y gestionar infraestructura.",
+    "data": {
+      "technology": "devops",
+      "modalidad": "remoto",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "5",
+    "titulo": "Diseñador UX/UI",
+    "empresa": "Creative Design Co.",
+    "ubicacion": "Híbrido",
+    "descripcion": "Buscamos diseñador UX/UI con experiencia en Figma, Adobe XD y prototipado. Capacidad para mejorar la experiencia del usuario.",
+    "data": {
+      "technology": "ux-ui",
+      "modalidad": "hibrido",
+      "nivel": "semi-senior"
+    }
+  },
+  {
+    "id": "6",
+    "titulo": "Administrador de Bases de Datos",
+    "empresa": "Data Systems Corp.",
+    "ubicacion": "Presencial",
+    "descripcion": "Se requiere DBA con experiencia en MySQL, PostgreSQL y optimización de consultas. Conocimiento en respaldo y seguridad de datos.",
+    "data": {
+      "technology": "sql",
+      "modalidad": "presencial",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "7",
+    "titulo": "Soporte Técnico IT",
+    "empresa": "Tech Support Group",
+    "ubicacion": "Remoto",
+    "descripcion": "Se busca técnico en soporte con conocimientos en mantenimiento de equipos, redes y atención al usuario.",
+    "data": {
+      "technology": "soporte",
+      "modalidad": "remoto",
+      "nivel": "junior"
+    }
+  },
+  {
+    "id": "8",
+    "titulo": "Especialista en Ciberseguridad",
+    "empresa": "SecureNet",
+    "ubicacion": "Híbrido",
+    "descripcion": "Buscamos especialista en seguridad informática con experiencia en análisis de vulnerabilidades y protección de sistemas.",
+    "data": {
+      "technology": "security",
+      "modalidad": "hibrido",
+      "nivel": "senior"
+    }
+  },
+  {
+    "id": "9",
+    "titulo": "Desarrollador Backend",
+    "empresa": "Backend Solutions",
+    "ubicacion": "Remoto",
+    "descripcion": "Se requiere desarrollador backend con experiencia en Node.js, APIs REST y bases de datos.",
+    "data": {
+      "technology": "node",
+      "modalidad": "remoto",
+      "nivel": "semi-senior"
+    }
+  },
+  {
+    "id": "10",
+    "titulo": "Ingeniero de Inteligencia Artificial",
+    "empresa": "AI Innovations",
+    "ubicacion": "Remoto",
+    "descripcion": "Buscamos ingeniero en IA con conocimientos en machine learning, Python y manejo de datos.",
+    "data": {
+      "technology": "ai",
+      "modalidad": "remoto",
+      "nivel": "senior"
+    }
+  }
+]
